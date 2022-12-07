@@ -1,13 +1,107 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap');
+
+
+:root{
+  --white: #fff;
+  --black: #111;
+  --blue: #3a80e9;
+  --red: 	#AA4A44;
+  --grey: #808080;
+  --dark-grey: #1a1919;
+  --green: #32CD32	;
+  --light-grey: #D3D3D3;
+
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html{
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--black);
+  color: var(--white);
+  min-height: 200vh;
+}   
+
+::selection{
+  color: var(--white);
+  background-color: var(--red);
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 0.6rem;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--black)
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--blue);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  } 
+
+
+  a{
+    text-decoration: none;
+    color: var(--white);
+  }
+
+  .top-btn{
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+    height: 2rem;
+    width: 2rem;
+    background-color: var(--dark-grey);
+    border-radius: 50%;
+    align-items: center;
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    border: 1px solid var(--blue);
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  .grey-container{
+    background-color: var(--dark-grey);
+    padding: 0.5rem;
+    margin: 0.5rem 1rem;
+    border-radius: 0.8rem; 
+  }
+
+  @media only screen and (max-width: 800px) {
+    .top-btn{
+      right: 0.5rem;
+      bottom: 0.5rem;
+    }
+
+    .grey-container{
+      background-color: var(--dark-grey);
+      padding: 0.25rem 0.5rem;
+     
+      border-radius: 0.8rem; 
+    }
+  }

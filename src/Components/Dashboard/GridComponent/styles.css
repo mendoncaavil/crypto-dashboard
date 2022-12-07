@@ -1,0 +1,130 @@
+.grid-box{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0.5rem;
+    background-color: var(--dark-grey);
+    border-radius: 0.8rem;
+    padding: 2rem;
+    border: 2px solid var(--dark-grey);
+}
+
+.coin-logo{
+    width: 2rem;    
+    height: 2rem;
+    border-radius: 50%;
+
+}
+
+.info-flex{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.name-flex p{
+    margin: 0;
+}
+
+.coin-symbol{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.coin-name{
+    font-size: 0.8rem;
+    color: var(--grey);
+}
+
+.coin-chip{
+    border: 1px solid var(--green);
+    padding: 0.25rem 1rem;
+    width: min-content;
+    border-radius: 2rem;
+    font-weight: 600;
+    color: var(--green);
+    min-width: 50px;
+    text-align: center;
+}
+
+.coin-chip:hover{
+    background-color: var(--green);
+    color: var(--white);
+    transition: all 0.3s;
+}
+
+.chip-red{
+    color: var(--red);
+    border: 1px solid var(--red);
+}
+
+.chip-red:hover{
+    background-color: var(--red);
+    color: var(--white);
+    transition: all 0.3s;
+}
+
+.chip-flex{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+
+}
+
+.icon{
+    border: 2px solid var(--green);
+    padding: 0.3rem; 
+    border-radius: 50%;
+    color: var(--green);
+}
+
+.icon:hover{
+    background-color: var(--green);
+    color: var(--white);
+    transition: all 0.3s;
+}
+
+ .icon-red{
+    border: 2px solid var(--red);
+    padding: 0.2rem; 
+    border-radius: 50%;
+    color: var(--red);
+}
+
+.icon-red:hover{
+    background-color: var(--red);
+    color: var(--white);
+    transition: all 0.3s;
+}
+
+.coin-price{
+    margin: 0;
+    font-weight: 600;
+    color: var(--green);
+}
+
+.volume-text{
+    font-size: 0.7rem;
+    margin-bottom: 0.1rem;
+    /* color: var(--grey); */
+}
+
+.grid-box:hover{
+    border: 2px solid var(--green);
+    transition: all 0.3s;
+    transform: scale(1);
+}
+
+.grid-box-red:hover{
+    border: 2px solid var(--red);
+    transition: all 0.3s;
+    transform: scale(1);
+}

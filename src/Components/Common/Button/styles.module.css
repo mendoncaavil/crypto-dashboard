@@ -1,0 +1,41 @@
+.btnDiv{
+    color: var(--white);
+    font-weight: 600;
+    text-transform: capitalize;
+    width: min-content;
+    padding: 0.5rem 1.5rem;
+    background-color: var(--blue);
+    border-radius: 2rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    min-width: 65px;
+    text-align: center;
+}
+
+.btnDiv:hover{
+    box-shadow: 5px 10px 20px rgba(109, 125, 148, 0.5);
+    transition: all 0.2s;
+}
+
+.outlineBtnDiv{
+    color: var(--white);
+    font-weight: 600;
+    text-transform: capitalize;
+    width: min-content;
+    padding: 0.5rem 1.5rem;
+    border: 2px solid var(--blue);
+    border-radius: 2rem;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    min-width: 65px;
+    text-align: center;
+}
+
+.outlineBtnDiv:hover{
+    background-color: var(--blue);
+    transition: all 0.2s;
+}
+
+/* @media only screen and (max-width: 800px) {
+    
+} */

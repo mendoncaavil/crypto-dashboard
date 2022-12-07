@@ -1,0 +1,7 @@
+.desc-links a{
+    color: var(--blue) !important;
+}
+
+.desc-links a:hover{
+    text-decoration: underline;
+}

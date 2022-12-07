@@ -1,0 +1,76 @@
+.list-row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    padding: 0rem 1rem;
+    margin: 1.5rem 0rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.list-row:hover{
+    background-color: var(--dark-grey);
+}
+
+.list-row td{
+    text-align: left !important;
+    width: 18%;   
+}
+
+.td-chip-flex{
+    min-width: 10rem;
+}
+
+.td-image{
+    width: 2rem !important
+}
+
+.td-vol-cap{
+    display: none;
+}
+
+
+@media only screen and (max-width: 800px)  {
+
+    .list-row{
+        padding: 0rem;
+        
+    }
+
+    .td-mkt-cap{
+        display: none;
+    }
+
+    .chip-icon{
+        display: none !important;
+    }
+
+    .td-chip-flex{
+        min-width: none;
+    }
+
+    .td-image{
+        width: min-content !important;
+    }
+
+    /* .coin-price{
+        min-width: 6rem;
+        
+    } */
+
+    .td-vol-cap{
+        display: block;
+        font-size: 70%;
+    }
+
+}
+
+
+@media only screen and (max-width: 600px)  {
+    .list-row{
+        padding: 0.5rem;
+        margin: 0.5rem 0rem;
+        gap: 0.1rem;
+    }
+}
