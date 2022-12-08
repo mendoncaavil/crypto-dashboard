@@ -4,12 +4,12 @@ import Select from "@mui/material/Select";
 import MenuItem from '@mui/material/MenuItem';
 
 
-function SelectDays({text, days, handleChange}) { 
+function SelectDays({noText, days, handleChange}) { 
     
 
   return (
     <div className="select-div">
-    <p>{text ? text : "Price change in the last"} </p>
+    {!noText ? <p>Price change in the last</p> : <></> } 
       <Select value={days}  onChange={handleChange}
         sx={{
             height: "2.5rem",

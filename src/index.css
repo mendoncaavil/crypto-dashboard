@@ -94,6 +94,14 @@ img {
     border-radius: 0.8rem; 
   }
 
+  .div-flex{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 1.5rem;
+  }
+
   @media only screen and (max-width: 800px) {
     .top-btn{
       right: 0.5rem;
@@ -103,7 +111,11 @@ img {
     .grey-container{
       background-color: var(--dark-grey);
       padding: 0.25rem 0.5rem;
-     
       border-radius: 0.8rem; 
+    }
+
+    .div-flex{
+      gap: 0.5rem;
+      margin: 1rem 0.5rem;
     }
   }
