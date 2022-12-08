@@ -11,6 +11,7 @@ import LineChart from "../Components/Coin/Chart/index";
 import { getDaysArray } from "../Functions/GetDaysArray";
 import { getDate } from "../Functions/GetDate";
 import SelectDays from "../Components/Coin/SelectDays/SelectDays";
+import TogglePrice from "../Components/Coin/ToggleComponent/Toggle";
 
 function CoinPage() {
   const { id } = useParams();
@@ -18,6 +19,8 @@ function CoinPage() {
   const [coin, setCoin] = useState({});
   const [days, setDays] = useState(7);
   const [loading, setLoading] = useState(true);
+  const [priceType, setPriceType] = useState("prices");
+
 
   const today = new Date();
   const priorDate = new Date(new Date().setDate(today.getDate() - days));
@@ -56,7 +59,7 @@ function CoinPage() {
 
   const getData = async () => {
     const data = await getCoinData(id);
-    const prices = await getCoinPrices(id, days);
+    const prices = await getCoinPrices(id, days, priceType);
 
     if (data) {
       console.log("data >>>", data);
@@ -95,7 +98,7 @@ function CoinPage() {
   };
 
   const handleDaysChange = async (event) => {
-    const prices = await getCoinPrices(id, event.target.value);
+    const prices = await getCoinPrices(id, event.target.value, priceType);
     if (prices) {
       console.log(prices);
       setChartData({
@@ -117,6 +120,29 @@ function CoinPage() {
     setDays(event.target.value);
   };
 
+  const handlePriceChange = async (event) => {
+    setPriceType(event.target.value);
+    const prices = await getCoinPrices(id, days, event.target.value);
+    if (prices) {
+      console.log(prices);
+      setChartData({
+        labels: prices?.map((data) => getDate(data[0])),
+        datasets: [
+          {
+            label: "Prices",
+            data: prices?.map((data) => data[1]),
+            borderWidth: 2,
+            fill: false,
+            tension: 0.25,
+            backgroundColor: "transparent",
+            borderColor: "#3a80e9",
+            pointRadius: 0,
+          },
+        ],
+      });
+    }
+  }
+
   return (
     <div>
       <Header />
@@ -132,6 +158,8 @@ function CoinPage() {
             setDays={setDays}
             handleChange={handleDaysChange}
           />
+
+          <TogglePrice priceType={priceType} handleChange={handlePriceChange}/>
           <LineChart chartData={chartData} options={options} />
           <p className="grey-container">
             <Info name={coin.name} desc={coin.desc} />
