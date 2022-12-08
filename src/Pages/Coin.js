@@ -44,12 +44,18 @@ function CoinPage() {
         display: false,
       },
     },
-    responsive: true,
+      responsive: true,
+ 
+
     interaction: {
       mode: "index",
       intersect: false,
     },
+    
   };
+
+
+
 
   useEffect(() => {
     if (id) {
@@ -150,9 +156,11 @@ function CoinPage() {
         <Loading />
       ) : (
         <>
-          <div className="grey-container">
+          <div className="grey-container" >
             <List coin={coin} />
           </div>
+
+          <div className="grey-container">
           <SelectDays
             days={days}
             setDays={setDays}
@@ -160,10 +168,13 @@ function CoinPage() {
           />
 
           <TogglePrice priceType={priceType} handleChange={handlePriceChange}/>
+          
           <LineChart chartData={chartData} options={options} />
-          <p className="grey-container">
+          </div>
+          <div className="grey-container">
+          
             <Info name={coin.name} desc={coin.desc} />
-          </p>
+          </div>
         </>
       )}
     </div>
