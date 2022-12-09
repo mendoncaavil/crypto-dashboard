@@ -28,9 +28,9 @@ function TogglePrice({priceType, handleChange}) {
       }}
       
     >
-      <ToggleButton value="prices">Price</ToggleButton>
-      <ToggleButton value="market_caps">Market Cap</ToggleButton>
-      <ToggleButton value="total_volumes">Total Volume</ToggleButton>
+      <ToggleButton className='toggle' value="prices">Price</ToggleButton>
+      <ToggleButton className='toggle' value="market_caps">Market Cap</ToggleButton>
+      <ToggleButton className='toggle' value="total_volumes">Total Volume</ToggleButton>
     </ToggleButtonGroup>
     </div>
   )

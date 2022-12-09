@@ -104,6 +104,7 @@ function CoinPage() {
   };
 
   const handleDaysChange = async (event) => {
+    setDays(event.target.value);
     const prices = await getCoinPrices(id, event.target.value, priceType);
     if (prices) {
       console.log(prices);
@@ -123,7 +124,6 @@ function CoinPage() {
         ],
       });
     }
-    setDays(event.target.value);
   };
 
   const handlePriceChange = async (event) => {
@@ -172,7 +172,6 @@ function CoinPage() {
           <LineChart chartData={chartData} options={options} />
           </div>
           <div className="grey-container">
-          
             <Info name={coin.name} desc={coin.desc} />
           </div>
         </>

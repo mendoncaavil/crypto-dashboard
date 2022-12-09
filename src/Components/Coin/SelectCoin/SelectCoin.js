@@ -8,7 +8,7 @@ import MenuItem from '@mui/material/MenuItem';
 function SelectCoin({coin, handleChange, allCoins}) {
   return (
     <div>
-        <Select value={coin}  onChange={handleChange}
+        <Select className='select-coin' value={coin}  onChange={handleChange}
         sx={{
             height: "2.5rem",
             color: "var(--white)",

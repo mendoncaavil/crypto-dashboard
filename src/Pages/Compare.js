@@ -11,6 +11,7 @@ import Info from "../Components/Coin/Info/Info";
 import { getCoinPrices } from "../Functions/GetCoinPrices";
 import LineChart from "../Components/Coin/Chart";
 import { getDate } from "../Functions/GetDate";
+import TogglePrice from "../Components/Coin/ToggleComponent/Toggle";
 
 function ComparePage() {
   const [coin1, setCoin1] = useState("bitcoin");
@@ -193,19 +194,24 @@ function ComparePage() {
     }
   };
 
+  const handlePriceChange =  (event) => {
+    setPriceType(event.target.value);
+    getPrices(coin1, coin2, days, event.target.value);
+  }
+
   return (
     <>
       <Header />
       <div className="div-flex">
         <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
-          <p>Crypto 1</p>
+          <p className="crypto-heading">Crypto 1</p>
           <SelectCoin
             coin={coin1}
             handleChange={(e) => handleCoinChange(e)}
             allCoins={allCoins.filter((coin) => coin.id != coin2)}
           />
 
-          <p>Crypto 2</p>
+          <p className="crypto-heading">Crypto 2</p>
           <SelectCoin
             coin={coin2}
             handleChange={(e) => handleCoinChange(e, true)}
@@ -231,7 +237,13 @@ function ComparePage() {
           <div className="grey-container">
             <List coin={coinData2} />
           </div>
+
+          <div className="grey-container">
+          <TogglePrice priceType={priceType} handleChange={handlePriceChange}/>
+
           <LineChart chartData={chartData} options={options} />
+          </div>
+
           <div className="grey-container">
             <Info name={coinData1.name} desc={coinData1.desc} />
           </div>
