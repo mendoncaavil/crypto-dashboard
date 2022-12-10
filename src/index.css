@@ -7,11 +7,25 @@
   --blue: #3a80e9;
   --red: 	#AA4A44;
   --grey: #808080;
-  --dark-grey: #1a1919;
+  --darkgrey: #1a1919;
   --green: #32CD32	;
   --light-grey: #D3D3D3;
 
 
+}
+
+[data-theme="light"] {
+  --white: #ffffff;
+  --black: #111;
+  --grey: #888;
+  --darkgrey: #1b1b1b;
+}
+
+[data-theme="dark"] {
+  --white: #111;
+  --black: #fff;
+  --grey: #888;
+  --darkgrey: #f3f3f3;
 }
 
 html{

@@ -2,10 +2,43 @@ import React,{useState} from 'react';
 import Drawer from '@mui/material/Drawer';
 import MenuRoundedIcon from '@mui/icons-material/MenuRounded';
 import styles from './styles.module.css'
-import Button from '../Button/Button';
 
 export default function MobileDrawer() {
     const[open, setOpen] = useState(false);
+
+    const setDark = () => {
+      localStorage.setItem("theme", "dark");
+      document.documentElement.setAttribute("data-theme", "dark");
+    };
+  
+    const setLight = () => {
+      localStorage.setItem("theme", "light");
+      document.documentElement.setAttribute("data-theme", "light");
+    };
+  
+    const storedTheme = localStorage.getItem("theme");
+  
+    const prefersDark =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+  
+    const defaultDark =
+      storedTheme === "dark" || (storedTheme === null && prefersDark);
+  
+    if (defaultDark) {
+      setDark();
+    }
+  
+    const [mode, setMode] = useState(defaultDark ? true : false);
+  
+    const toggleTheme = (e) => {
+      if (!mode) {
+        setDark();
+      } else {
+        setLight();
+      }
+      setMode(!mode);
+    };
   
   return (
     <div className={styles.drawerDiv}> 
