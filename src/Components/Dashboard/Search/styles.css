@@ -2,19 +2,19 @@
     display: flex;
     width: 80%;
     margin: 1rem auto;
-    background-color: var(--dark-grey);
+    background-color: var(--darkgrey);
     padding: 0.5rem 1rem;
     justify-content: flex-start;
     align-items: center;
-    color: var(--light-grey);
+    color: var(--darkgrey);
     gap: 0.5rem;
     border-radius: 2rem;
 }
 
 .search-box input{
     width: 100%;
-    background-color: var(--dark-grey);
-    color: var(--light-grey);
+    background-color: var(--darkgrey);
+    color: var(--grey);
     font-family: 'Inter', sans-serif;
     border: none;
     color: var(--white);

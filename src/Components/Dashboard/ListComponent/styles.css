@@ -9,7 +9,7 @@
 }
 
 .list-row:hover{
-    background-color: var(--dark-grey);
+    background-color: var(--darkgrey);
 }
 
 .list-row td{

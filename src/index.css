@@ -5,13 +5,10 @@
   --white: #fff;
   --black: #111;
   --blue: #3a80e9;
-  --red: 	#AA4A44;
-  --grey: #808080;
-  --darkgrey: #1a1919;
-  --green: #32CD32	;
-  --light-grey: #D3D3D3;
-
-
+  --grey: #888;
+  --darkgrey: #1b1b1b;
+  --green: #61c96f;
+  --red: #f94141;
 }
 
 [data-theme="light"] {
@@ -42,6 +39,10 @@ body {
   color: var(--white);
   min-height: 200vh;
 }   
+
+h1,h2,h3,h4,h5,h6,p{
+  color: var(--white);
+}
 
 ::selection{
   color: var(--white);
@@ -119,6 +120,8 @@ img {
   .select-coin{
     border-radius: 50px !important;
   }
+
+
 
   
   @media only screen and (max-width: 800px) {
