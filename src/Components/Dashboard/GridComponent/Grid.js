@@ -3,6 +3,8 @@ import "./styles.css";
 import TrendingDownIcon from '@mui/icons-material/TrendingDown';
 import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import {motion} from 'framer-motion'
+import TurnedInNotIcon from '@mui/icons-material/TurnedInNot';
+
 
 function Grid({ coin, delay }) {
   return (
@@ -19,6 +21,9 @@ function Grid({ coin, delay }) {
           <p className="coin-symbol">{coin.symbol}-USD</p>
           <p className="coin-name">{coin.name}</p>
         </div>
+        <div className="bookmark-icon-div">
+              <TurnedInNotIcon className="bookmark-icon"/>
+          </div>
       </div>
       {coin.price_change_percentage_24h > 0 ? (
         <div className="chip-flex">

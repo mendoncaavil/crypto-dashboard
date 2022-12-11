@@ -22,54 +22,128 @@
 }
 
 .td-image{
-    width: 2rem !important
+    width: 5rem !important
 }
+
+.td-name-flex {
+    min-width: 100px;
+  }
 
 .td-vol-cap{
     display: none;
 }
+
+.bookmark-icon-div{
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--blue);
+    border-radius: 50%;
+    margin-left: auto;
+     cursor: pointer;
+    /* margin-left: auto; */
+    
+
+}
+
+.bookmark-icon{
+    color: var(--blue);
+    /* margin-left: auto; */
+}
+
+
+@media only screen and (max-width: 900px) {
+    .td-mkt-cap {
+      display: none;
+    }
+    .td-vol-cap {
+      display: block;
+    }
+    .bookmark-icon-div {
+      width: 2rem;
+      height: 2rem;
+    }
+  
+    .bookmark-icon {
+      font-size: 1.2rem !important;
+    }
+  }
 
 
 @media only screen and (max-width: 800px)  {
 
     .list-row{
         padding: 0rem;
+        margin-bottom: 1rem;
+        gap: 0.3rem;
         
     }
 
-    .td-mkt-cap{
-        display: none;
-    }
+    .td-name-flex {
+        min-width: 0px;
+      }
 
-    .chip-icon{
+      .td-chip-flex {
+        min-width: 0rem;
+      }
+
+      .chip-icon {
         display: none !important;
-    }
-
-    .td-chip-flex{
-        min-width: none;
-    }
-
-    .td-image{
+      }
+    
+      .td-img {
         width: min-content !important;
-    }
+      }
+    
+      .percentage-text {
+        font-size: 50%;
+      }
 
-    /* .coin-price{
-        min-width: 6rem;
-        
-    } */
-
-    .td-vol-cap{
-        display: block;
+      .name-text,
+      .td-vol-cap {
         font-size: 70%;
-    }
+      }
+    
+      .td-img img {
+        height: 2rem;
+        width: 2rem;
+        margin-right: 0.2rem;
+      }
 
-}
+}   
 
 
 @media only screen and (max-width: 600px)  {
-    .list-row{
-        padding: 0.5rem;
-        margin: 0.5rem 0rem;
-        gap: 0.1rem;
-    }
+   .td-vol-cap {
+    width: min-content;
+  }
+  .td-vol-cap p,
+  .coin-price {
+    text-align: center !important;
+    font-size: 0.7rem;
+  }
+  .list-row {
+    padding: 0.5rem;
+    margin: 0.5rem 0rem;
+    gap: 0.1rem;
+  }
+  .name-text {
+    font-size: 70%;
+  }
+  .bookmark-icon-div {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-width: 1.75px;
+  }
+
+  .bookmark-icon {
+    font-size: 1rem !important;
+  }
+ 
+  .coin-chip{
+    padding: 0.4rem;
+    font-size: 0.6rem;
+  } 
 }
