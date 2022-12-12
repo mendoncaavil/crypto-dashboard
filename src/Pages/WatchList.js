@@ -8,6 +8,10 @@ function WatchList() {
   const watchlist = localStorage.getItem("watchlist");
   const [coins, setCoins] = useState([]);
 
+  useEffect(()=>{
+    console.log("watchlist was changed");
+  },[watchlist])
+
   useEffect(() => {
     axios
       .get(DASHBOARD_API_URL)

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
 import TrendingDownIcon from "@mui/icons-material/TrendingDown";
 import TrendingUpIcon from "@mui/icons-material/TrendingUp";
@@ -7,8 +7,14 @@ import TurnedInNotIcon from "@mui/icons-material/TurnedInNot";
 import { addToWatchlist } from "../../../Functions/AddToWatchlist";
 import BookmarkIcon from "@mui/icons-material/Bookmark";
 import { removeFromWatchlist } from "../../../Functions/RemoveFromWatchlist";
+import IconButton from '@mui/material/IconButton';
 
-function Grid({ coin, delay, isWatchList }) {
+
+function Grid({ coin, delay }) {
+    const isWatchList = localStorage.getItem("watchlist").includes(coin.id);
+    const [isAdded, setIsAdded] = useState(false)
+
+
   return (
     <motion.div
       initial={{ y: 50, opacity: 0 }}
@@ -29,19 +35,26 @@ function Grid({ coin, delay, isWatchList }) {
           </div>
         </a>
 
-        {isWatchList ? (
+        {isWatchList || isAdded ? (
           <div
             className="bookmark-icon-div"
-            onClick={() => removeFromWatchlist(coin.id)}
+            onClick={() => {setIsAdded(false);
+              removeFromWatchlist(coin.id)}}
           >
+            <IconButton>
             <BookmarkIcon className="bookmark-icon" />
+            </IconButton>
           </div>
         ) : (
           <div
             className="bookmark-icon-div"
-            onClick={() => addToWatchlist(coin.id)}
+            onClick={() => {setIsAdded(true);
+               addToWatchlist(coin.id)}}
           >
+          <IconButton>
             <TurnedInNotIcon className="bookmark-icon" />
+            </IconButton>
+
           </div>
          )}
       </div>

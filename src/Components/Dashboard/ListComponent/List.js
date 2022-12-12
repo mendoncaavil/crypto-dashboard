@@ -5,30 +5,38 @@ import TrendingUpIcon from "@mui/icons-material/TrendingUp";
 import { ConvertNumber } from "../../../Functions/ConvertNumber";
 import { motion } from "framer-motion";
 import Tooltip from "@mui/material/Tooltip";
-import TurnedInNotIcon from '@mui/icons-material/TurnedInNot';
+import TurnedInNotIcon from "@mui/icons-material/TurnedInNot";
+import { removeFromWatchlist } from "../../../Functions/RemoveFromWatchlist";
+import { addToWatchlist } from "../../../Functions/AddToWatchlist";
+import BookmarkIcon from "@mui/icons-material/Bookmark";
+import IconButton from '@mui/material/IconButton';
 
-function List({ coin, delay, isWatchList }) {
+
+function List({ coin, delay }) {
+  const isWatchList = localStorage.getItem("watchlist").includes(coin.id);
+
   const [volume, setVolume] = useState("");
-
-  // console.log(volume)
+  const [isAdded, setIsAdded] = useState(false)
 
   useEffect(() => {
     setVolume(ConvertNumber(parseInt(coin.total_volume)));
   }, []);
 
   return (
-    <a href={`/coin/${coin.id}`}>
       <motion.tr
         className="list-row"
         initial={{ y: 50, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: delay }}
       >
+      <a href={`/coin/${coin.id}`}>
         <td className="td-image">
           <Tooltip title="symbol" arrow>
             <img src={coin.image} className="coin-logo" />
           </Tooltip>
         </td>
+        </a>
+        <a href={`/coin/${coin.id}`}>
         <td className="td-name-flex">
           <div className="name-flex">
             <p className="coin-symbol">{coin.symbol}-USD</p>
@@ -36,6 +44,8 @@ function List({ coin, delay, isWatchList }) {
             <p className="coin-name">{coin.name}</p>
           </div>
         </td>
+        </a>
+        <a href={`/coin/${coin.id}`}>
         <td className="td-chip-flex">
           <Tooltip title="Percentage change in 24 hours" arrow>
             {coin.price_change_percentage_24h > 0 ? (
@@ -56,6 +66,9 @@ function List({ coin, delay, isWatchList }) {
             )}
           </Tooltip>
         </td>
+        </a>
+
+        <a href={`/coin/${coin.id}`}>
         <td>
           <Tooltip title="Price" placement="bottom-start">
             <p
@@ -71,30 +84,59 @@ function List({ coin, delay, isWatchList }) {
             </p>
           </Tooltip>
         </td>
-
+        </a>
+        <a href={`/coin/${coin.id}`}>
         <td className="td-mkt-cap">
           <Tooltip title="Total Volume" arrow>
             <p>{" $" + coin.total_volume.toLocaleString()}</p>
           </Tooltip>
         </td>
+        </a>
+
+        <a href={`/coin/${coin.id}`}>
         <td className="td-mkt-cap">
           <Tooltip title="Coin Market Capital" arrow>
             <p>{" $" + coin.market_cap.toLocaleString()}</p>
           </Tooltip>
         </td>
+        </a>
+
+        <a href={`/coin/${coin.id}`}>
         <td className="td-vol-cap">
           <Tooltip title="Volume" arrow>
             <p> {"$" + volume} </p>
           </Tooltip>
         </td>
-        <td>
-          <div className="bookmark-icon-div">
-              <TurnedInNotIcon className="bookmark-icon"/>
-          </div>
-        </td>
+        </a>
 
+        <td>
+          {isWatchList || isAdded ?  (
+            <div
+              className="bookmark-icon-div"
+              onClick={() => {
+                setIsAdded(false);
+                removeFromWatchlist(coin.id)}}
+            >
+              <IconButton>
+              <BookmarkIcon className="bookmark-icon" />
+              </IconButton>
+            </div>
+          ) : (
+            <div
+              className="bookmark-icon-div"
+              onClick={() => {
+                setIsAdded(true);
+                addToWatchlist(coin.id)
+                }
+              }
+            >
+             <IconButton>
+              <TurnedInNotIcon className="bookmark-icon" />
+              </IconButton>
+            </div>
+          )}
+        </td>
       </motion.tr>
-    </a>
   );
 }
 
