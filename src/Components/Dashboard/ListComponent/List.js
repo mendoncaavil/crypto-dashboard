@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import Tooltip from "@mui/material/Tooltip";
 import TurnedInNotIcon from '@mui/icons-material/TurnedInNot';
 
-function List({ coin, delay }) {
+function List({ coin, delay, isWatchList }) {
   const [volume, setVolume] = useState("");
 
   // console.log(volume)
