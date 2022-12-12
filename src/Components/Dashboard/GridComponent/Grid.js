@@ -11,7 +11,7 @@ import IconButton from '@mui/material/IconButton';
 
 
 function Grid({ coin, delay }) {
-    const isWatchList = localStorage.getItem("watchlist").includes(coin.id);
+    // const isWatchList = localStorage.getItem("watchlist").includes(coin.id);
     const [isAdded, setIsAdded] = useState(false);
 
 
