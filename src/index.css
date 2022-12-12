@@ -122,6 +122,10 @@ img {
   }
 
 
+  .watchlist-empty-text{
+    text-align: center;
+    color: var(--grey);
+  }
 
   
   @media only screen and (max-width: 800px) {
@@ -152,5 +156,12 @@ img {
       height: 35px !important;
       border-radius: 50px !important;
 
+    }
+
+    .watchlist-empty-text{
+      color: var(--grey);
+      font-size: 1rem;
+      text-align: center;
+      align-items: center;
     }
   }

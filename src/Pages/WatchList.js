@@ -5,12 +5,14 @@ import { DASHBOARD_API_URL } from "../Constants";
 import Tabs from "../Components/Dashboard/Tabs/Tabs";
 
 function WatchList() {
-  const watchlist = localStorage.getItem("watchlist");
+  const watchlist = localStorage.getItem("watchlist")
+    ? localStorage.getItem("watchlist").split(",")
+    : [];
   const [coins, setCoins] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     console.log("watchlist was changed");
-  },[watchlist])
+  }, [watchlist]);
 
   useEffect(() => {
     axios
@@ -33,7 +35,14 @@ function WatchList() {
     <div>
       <Header />
       <div>
-        <Tabs data={coins} isWatchList={true} />
+        {coins.length > 0 ? (
+          <Tabs data={coins} isWatchList={true} />
+        ) : (
+          <div>
+           
+            <h1 className="watchlist-empty-text">Your watchlist is currently empty</h1>
+          </div>
+        )}
       </div>
     </div>
   );
