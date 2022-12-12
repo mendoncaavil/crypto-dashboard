@@ -11,7 +11,9 @@ import IconButton from '@mui/material/IconButton';
 
 
 function Grid({ coin, delay }) {
-    // const isWatchList = localStorage.getItem("watchlist").includes(coin.id);
+  const isWatchList = localStorage.getItem("watchlist")
+  ? localStorage.getItem("watchlist").includes(coin.id)
+  : false;
     const [isAdded, setIsAdded] = useState(false);
 
 
@@ -35,7 +37,7 @@ function Grid({ coin, delay }) {
           </div>
         </a>
 
-        {/* {isWatchList || isAdded ? (
+        {isWatchList || isAdded ? (
           <div
             className="bookmark-icon-div"
             onClick={() => {setIsAdded(false);
@@ -56,7 +58,7 @@ function Grid({ coin, delay }) {
             </IconButton>
 
           </div>
-         )} */}
+         )}
       </div>
 
       <a href={`/coin/${coin.id}`}>
