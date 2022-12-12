@@ -127,6 +127,13 @@ img {
     color: var(--grey);
   }
 
+  .cursor{
+
+  }
+.cursor-pointer{
+  
+}
+
   
   @media only screen and (max-width: 800px) {
     .top-btn{
