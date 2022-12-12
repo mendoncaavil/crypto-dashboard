@@ -35,7 +35,7 @@ function Grid({ coin, delay }) {
           </div>
         </a>
 
-        {isWatchList || isAdded ? (
+        {/* {isWatchList || isAdded ? (
           <div
             className="bookmark-icon-div"
             onClick={() => {setIsAdded(false);
@@ -56,7 +56,7 @@ function Grid({ coin, delay }) {
             </IconButton>
 
           </div>
-         )}
+         )} */}
       </div>
 
       <a href={`/coin/${coin.id}`}>
