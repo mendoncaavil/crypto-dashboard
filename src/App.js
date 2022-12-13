@@ -9,9 +9,6 @@ import WatchList from "./Pages/WatchList";
 function App() {
   return (
     <div>
-      <div className="cursor" id="cursor"> </div>
-      <div className="cursor-pointer" id="cursor-pointer"></div>
-
       <BrowserRouter>
       <Routes>
           <Route path="/" element={<Home/>}/>

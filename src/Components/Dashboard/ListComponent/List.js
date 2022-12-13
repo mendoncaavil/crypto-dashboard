@@ -13,8 +13,9 @@ import IconButton from '@mui/material/IconButton';
 
 
 function List({ coin, delay }) {
-  const isWatchList = localStorage.getItem("watchlist").includes(coin.id);
-
+  const isWatchList = localStorage.getItem("watchlist")
+    ? localStorage.getItem("watchlist").includes(coin.id)
+    : false;
   const [volume, setVolume] = useState("");
   const [isAdded, setIsAdded] = useState(false)
 
