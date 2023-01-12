@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    padding: 0rem 1rem;
+    padding: 1rem;
     border-radius: 1rem;
     cursor: pointer;
 }
@@ -122,7 +122,7 @@
   .td-vol-cap p,
   .coin-price {
     text-align: center !important;
-    font-size: 0.7rem;
+    /* font-size: 0.7rem; */
   }
   .list-row {
     padding: 0.5rem;
@@ -130,7 +130,7 @@
     gap: 0.1rem;
   }
   .name-text {
-    font-size: 70%;
+    font-size: 60%;
   }
   .bookmark-icon-div {
     width: 1.5rem;
@@ -148,4 +148,8 @@
     padding: 0.4rem;
     font-size: 0.6rem;
   } 
+
+  .td-image{
+    width: 2rem !important;
+  }
 }

@@ -103,6 +103,11 @@
         left: -1rem;
       }
 
+      .phoneBox{
+        min-height: 80vh;
+        margin: auto;
+      }
+
 }
 
 @media only screen and (max-width: 600px) {
@@ -111,4 +116,9 @@
       font-size: 3rem;
       text-align: center;
     }
+
+    .phoneBox{
+        min-height: 100vh !important;
+        margin: auto;
+      }
 }

@@ -146,3 +146,23 @@
     padding: 0.3rem;
     }
 }
+
+@media only screen and (max-width: 600px){
+    .coin-price{
+        font-size: 0.8rem;
+        margin-top: 5px;
+        /* margin-left: 80px; */
+        align-items: center;
+    }
+
+    .chip-flex{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .icon{
+        padding: 0.1rem;
+    }
+}
