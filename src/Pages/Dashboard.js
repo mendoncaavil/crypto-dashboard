@@ -25,8 +25,7 @@ function Dashboard() {
       });
   }, []);
 
-  const filterCoins = data.filter(
-    (item) =>
+  const filterCoins = data.filter((item) =>
       item.name.toLowerCase().includes(search) ||
       item.symbol.toLowerCase().includes(search)
   );
